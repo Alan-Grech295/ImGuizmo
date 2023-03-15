@@ -742,13 +742,13 @@ namespace IMGUIZMO_NAMESPACE
       //
       int mCurrentOperation;
 
-      float mX = 0.f;
-      float mY = 0.f;
-      float mWidth = 0.f;
-      float mHeight = 0.f;
-      float mXMax = 0.f;
-      float mYMax = 0.f;
-      float mDisplayRatio = 1.f;
+      float mX             = 0.f;
+      float mY             = 0.f;
+      float mWidth         = 0.f;
+      float mHeight        = 0.f;
+      float mXMax          = 0.f;
+      float mYMax          = 0.f;
+      float mDisplayRatio  = 1.f;
 
       bool mIsOrthographic = false;
 
