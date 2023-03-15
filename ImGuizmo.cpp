@@ -47,7 +47,7 @@ namespace IMGUIZMO_NAMESPACE
    static const float ZPI = 3.14159265358979323846f;
    static const float RAD2DEG = (180.f / ZPI);
    static const float DEG2RAD = (ZPI / 180.f);
-   const float screenRotateSize = 0.06f;
+   const float screenRotateSize = 0.04f;
    // scale a bit so translate axis do not touch when in universal
    const float rotationDisplayFactor = 1.2f;
 
@@ -637,14 +637,14 @@ namespace IMGUIZMO_NAMESPACE
    Style::Style()
    {
       // default values
-      TranslationLineThickness      = 4.0f;
-      TranslationLineArrowSize      = 10.0f;
-      RotationLineThickness         = 4.0f;
-      RotationOuterLineThickness    = 4.0f;
-      ScaleLineThickness            = 4.0f;
-      ScaleLineCircleSize           = 10.0f;
-      HatchedAxisLineThickness      = 4.0f;
-      CenterCircleSize              = 4.0f;
+      TranslationLineThickness      = 6.0f;
+      TranslationLineArrowSize      = 12.0f;
+      RotationLineThickness         = 6.0f;
+      RotationOuterLineThickness    = 6.0f;
+      ScaleLineThickness            = 6.0f;
+      ScaleLineCircleSize           = 12.0f;
+      HatchedAxisLineThickness      = 6.0f;
+      CenterCircleSize              = 6.0f;
 
       // initialize default colors
       Colors[DIRECTION_X]             = ImVec4(0.800f, 0.325f, 0.173f, 1.000f);
@@ -757,7 +757,7 @@ namespace IMGUIZMO_NAMESPACE
       OPERATION mOperation = OPERATION(-1);
 
       bool mAllowAxisFlip = true;
-      float mGizmoSizeClipSpace = 0.1f;
+      float mGizmoSizeClipSpace = 0.15f;
    };
 
    static Context gContext;
@@ -1958,7 +1958,7 @@ namespace IMGUIZMO_NAMESPACE
 
       vec_t deltaScreen = { io.MousePos.x - gContext.mScreenSquareCenter.x, io.MousePos.y - gContext.mScreenSquareCenter.y, 0.f, 0.f };
       float dist = deltaScreen.Length();
-      if (Intersects(op, ROTATE_SCREEN) && dist >= (gContext.mRadiusSquareCenter - 4.0f) && dist < (gContext.mRadiusSquareCenter + 4.0f))
+      if (Intersects(op, ROTATE_SCREEN) && dist >= (gContext.mRadiusSquareCenter * 1.1f - 3.0f) && dist < (gContext.mRadiusSquareCenter * 1.1f + 2.0f))
       {
          type = MT_ROTATE_SCREEN;
       }
